@@ -1,12 +1,11 @@
 /*task 1*/
 function max(a,b){
 
-	var max = b;
 	if(a > b){
-		max = a;
-	} 
+		return a;
+	}
 
-	return max;
+	return b;
 }
 
 /*task 2*/
@@ -48,12 +47,10 @@ function translate(str){
 	for (var i = 0, len = str.length; i < len; i++) {
 		
 		if (!isVowel(str[i])){
-
 			result += str[i] + 'o' + str[i];
 		} else {
 			result += str[i];
 		}
-
 	}
 
 	return result;
@@ -138,7 +135,6 @@ function charFreq(str){
 	    } else {
 	    	result[str[i]] = 1;
 	    }
-
 	}
 
 	return result;
