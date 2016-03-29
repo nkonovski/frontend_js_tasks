@@ -31,8 +31,9 @@ function isVowel(a){
 	}
 
 	a = a.toLowerCase();
+    var vowel = ['a', 'e', 'o', 'i', 'u'];
 
-	if (a == 'a' || a == 'e' || a == 'o' || a == 'i' || a == 'u' ){
+	if (vowel.indexOf(a) != -1){
 		return true;
 	}
 
