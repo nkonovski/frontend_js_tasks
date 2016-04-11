@@ -44,11 +44,11 @@ document.getElementById("addNewParticipant").addEventListener("click", addNewRow
 function addNewRow(){
 
 	var container = document.getElementById("container");
-
-	var newRow = document.createElement("div");
 	var row = document.getElementById("sampleRow");
 	var name = document.getElementById("addNewParticipantName").value;
-
+	// create new row
+	var newRow = document.createElement("div");
+	
 	// copy row elements
 	newRow.innerHTML = row.innerHTML;
 	// set name 
@@ -58,7 +58,6 @@ function addNewRow(){
 	newRow.children[4].addEventListener("click", function(){
 
 		var scores = ScoreBoard.givePoints(name, parseInt(newRow.children[3].value));
-		console.log(scores);
 		//update UI
 		newRow.children[1].value = scores.scores;
 		newRow.children[2].value = scores.beers;
@@ -66,6 +65,7 @@ function addNewRow(){
 
 	//delete row (only from UI)
 	newRow.children[5].addEventListener("click", function(){
+		ScoreBoard.deleteParticipant(name);
 		container.removeChild(newRow);
 	});
 	

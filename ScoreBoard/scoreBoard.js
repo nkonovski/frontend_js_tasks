@@ -20,7 +20,14 @@ var ScoreBoard = (function () {
 	 */
 	function addParticipant (name) {
 		participants[name] = new Participant(name);
+	}
 
+	/**
+	 * Delete pariticipant from the scoreboard
+	 * @param {String} name
+	 */
+	function deleteParticipant (name) {
+		participants[name] = null;
 	}
 
 	/**
@@ -59,6 +66,7 @@ var ScoreBoard = (function () {
 		addParticipant: addParticipant,
 		givePoints: givePoints,
 		listScore: listScore,
+		deleteParticipant: deleteParticipant,
 		beersGiven: function () {
 
 			return beerCount;
